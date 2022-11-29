@@ -74,5 +74,8 @@ public class StudentList {
 			System.out.println(names.length + constant.wordsFound );
 			System.out.println(constant.dataLoaded);
 		}
+		else {
+			System.out.println(constant.Error);
+		}
 	}
 }
