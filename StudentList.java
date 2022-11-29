@@ -46,28 +46,23 @@ public class StudentList {
 			System.out.println(constant.dataLoad);
 			read();
 			Random random = new Random();
-			int index = random.nextInt(names.length);
-			System.out.println(names[index]);
+			System.out.println(names[random.nextInt(names.length)]);
 			System.out.println(constant.dataLoaded);
 		}
 		else if(args[0].contains(constant.addName)) {
 			System.out.println(constant.dataLoad);
 			read();
-			String newname = args[0].substring(1);
 			Date date = new Date();
-			String dateformate = constant.dateFormat;
-			DateFormat dateFormat = new SimpleDateFormat(dateformate);
-			String finaldate = dateFormat.format(date);
-			write(students + constant.split + newname + constant.lastUpdate + finaldate);
+			DateFormat dateFormat = new SimpleDateFormat(constant.dateFormat);
+			write(students + constant.split + args[0].substring(1) + constant.lastUpdate + dateFormat.format(date));
 			System.out.println(constant.dataLoaded);
 		}
 		else if(args[0].contains(constant.query)) {
 			System.out.println(constant.dataLoad);
 			read();
 			boolean done = false;
-			String newname = args[0].substring(1);
 			for(int idx = 0; idx<names.length && !done; idx++) {
-				if(names[idx].equals(newname)) {
+				if(names[idx].equals(args[0].substring(1))) {
 					System.out.println(constant.Found);
 						done=true;
 				}
