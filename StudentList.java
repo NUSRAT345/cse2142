@@ -5,7 +5,10 @@ public class StudentList {
 	public static void main(String[] args) {
 
 //		Check arguments
-		if(args[0].equals("a")) {
+		if(args.length == 0){
+			System.out.println("Invalid");
+		}
+		else if(args[0].equals("a")) {
 			System.out.println("Loading data ...");			
 			try {
 				BufferedReader s = new BufferedReader(new InputStreamReader(new FileInputStream("students.txt")));
