@@ -71,14 +71,7 @@ public class StudentList {
 		else if(args[0].contains(constant.countWords)) {
 			System.out.println(constant.dataLoad);
 			read();
-			char characters[] = students.toCharArray();
-			int count = 1;
-			for(char character : characters) {
-				if(character ==' ') {
-					count++;
-				}
-			}
-			System.out.println(count + constant.wordsFound );
+			System.out.println(names.length + constant.wordsFound );
 			System.out.println(constant.dataLoaded);
 		}
 	}
