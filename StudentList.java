@@ -60,11 +60,10 @@ public class StudentList {
 		else if(args[0].contains(constant.query)) {
 			System.out.println(constant.dataLoad);
 			read();
-			boolean done = false;
-			for(int idx = 0; idx<names.length && !done; idx++) {
+			for(int idx = 0; idx<names.length; idx++) {
 				if(names[idx].equals(args[0].substring(1))) {
 					System.out.println(constant.Found);
-						done=true;
+					break;
 				}
 			}
 			System.out.println(constant.dataLoaded);
