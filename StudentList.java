@@ -7,6 +7,8 @@ public class StudentList {
 
 	public static Constant constant = new Constant();
 
+	//Reading the text from student.txt
+
 	public static void read() {
 		try {
 			BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(constant.FileNmae)));
@@ -16,6 +18,7 @@ public class StudentList {
 
 		}
 	}
+   	//Writing the update text
 
 	public static void write(String update) {
 		try {
@@ -30,10 +33,15 @@ public class StudentList {
 
 	public static void main(String[] args) {
 
-//		Check arguments
+		//Check arguments
+
 		if(args.length == 0){
+			//Invalid input formate
+
 			System.out.println(constant.Error);
 		}
+		//Display all student names
+
 		else if(args[0].equals(constant.showNames)) {
 			System.out.println(constant.dataLoad);
 			read();
@@ -42,6 +50,8 @@ public class StudentList {
 			}
 			System.out.println(constant.dataLoaded);
 		}
+		//Display a random student
+
 		else if(args[0].equals(constant.randomName)) {
 			System.out.println(constant.dataLoad);
 			read();
@@ -49,6 +59,8 @@ public class StudentList {
 			System.out.println(names[random.nextInt(names.length)]);
 			System.out.println(constant.dataLoaded);
 		}
+		//Add a new name
+
 		else if(args[0].contains(constant.addName)) {
 			System.out.println(constant.dataLoad);
 			read();
@@ -57,6 +69,8 @@ public class StudentList {
 			write(students + constant.split + args[0].substring(1) + constant.lastUpdate + dateFormat.format(date));
 			System.out.println(constant.dataLoaded);
 		}
+		//Searching student name
+
 		else if(args[0].contains(constant.query)) {
 			System.out.println(constant.dataLoad);
 			read();
@@ -68,6 +82,8 @@ public class StudentList {
 			}
 			System.out.println(constant.dataLoaded);
 		}
+		//count the student name
+
 		else if(args[0].contains(constant.countWords)) {
 			System.out.println(constant.dataLoad);
 			read();
@@ -75,6 +91,8 @@ public class StudentList {
 			System.out.println(constant.dataLoaded);
 		}
 		else {
+			//invalid input formate
+			
 			System.out.println(constant.Error);
 		}
 	}
